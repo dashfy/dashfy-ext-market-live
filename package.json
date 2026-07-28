@@ -1,0 +1,115 @@
+{
+  "name": "@dashfy/ext-market-live",
+  "version": "0.1.0",
+  "description": "Dashfy extension for displaying live market data using Pyth Network oracle.",
+  "keywords": [
+    "dashfy",
+    "dashboard",
+    "widgets",
+    "extension",
+    "market",
+    "live",
+    "commodities",
+    "crypto",
+    "equities",
+    "forex",
+    "rates"
+  ],
+  "homepage": "https://github.com/dashfy/dashfy#readme",
+  "bugs": {
+    "url": "https://github.com/dashfy/dashfy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashfy/dashfy.git",
+    "directory": "packages/ext-market-live"
+  },
+  "license": "AGPL-3.0-or-later",
+  "author": {
+    "name": "Breno Polanski",
+    "email": "breno.polanski@gmail.com",
+    "url": "https://github.com/brenopolanski"
+  },
+  "type": "module",
+  "dashfy": {
+    "id": "market-live",
+    "title": "Market Live",
+    "categories": [
+      "finance"
+    ],
+    "widgets": [
+      "PriceLive",
+      "TableLive"
+    ],
+    "starter": [
+      {
+        "widget": "PriceLive",
+        "feedId": "crypto.BTC_USD",
+        "showChart": false
+      }
+    ]
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "check:circular": "madge --circular --extensions ts,tsx src/",
+    "clean": "rm -rf .turbo dist node_modules",
+    "dev": "tsup --watch",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "generate:feeds": "tsx src/scripts/generate-pyth-feeds.ts",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dashfy/utils": "workspace:*",
+    "@dashfy/ui": "workspace:*",
+    "@pythnetwork/client": "^2.22.0",
+    "@solana/web3.js": "^1.98.4",
+    "liveline": "^0.0.7"
+  },
+  "peerDependencies": {
+    "lucide-react": "^0.454.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@dashfy/tsconfig": "workspace:*",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.0.1",
+    "@types/node": "^22.8.6",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "jsdom": "^25.0.1",
+    "lucide-react": "^0.454.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.4"
+  }
+}
