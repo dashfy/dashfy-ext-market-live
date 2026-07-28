@@ -8,5 +8,5 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   treeshake: true,
-  external: ['react', 'react-dom', 'lucide-react'],
+  external: ['@getdashfy/ui', 'react', 'react-dom', 'lucide-react'],
 })

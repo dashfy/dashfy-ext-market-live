@@ -1,4 +1,4 @@
-import type * as DashfyUi from '@dashfy/ui'
+import type * as DashfyUi from '@getdashfy/ui'
 import { render, screen, waitFor } from '@testing-library/react'
 import * as React from 'react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
@@ -12,8 +12,8 @@ vi.mock('@/lib/pythEngine', () => ({
   unsubscribeFromPrice: vi.fn(),
 }))
 
-vi.mock('@dashfy/ui', async () => {
-  const actual = await vi.importActual<typeof DashfyUi>('@dashfy/ui')
+vi.mock('@getdashfy/ui', async () => {
+  const actual = await vi.importActual<typeof DashfyUi>('@getdashfy/ui')
   return {
     ...actual,
     ChartContainer: ({

@@ -92,6 +92,20 @@ export function getPythFeedDisplayPair(pythFeedId: string | undefined): string |
  * @param value - the feed identifier to resolve
  * @returns the Pyth price feed PublicKey
  * @throws if the identifier cannot be resolved
+ * @example
+ * ```ts
+ * resolvePythFeedId('crypto.BTC_USD')
+ * // => PublicKey (GVXRSBjFk6e6J3NbVPXohDJetcTjaeeuykUpbQF8UoMU)
+ *
+ * resolvePythFeedId('BTC_USD')
+ * // => same feed, category defaults to crypto
+ *
+ * resolvePythFeedId('equities.US_AAPL_USD')
+ * // => PublicKey for the Apple equity feed
+ *
+ * resolvePythFeedId('nope.FAKE_USD')
+ * // => throws 'Unknown feed category "nope"'
+ * ```
  */
 export function resolvePythFeedId(value: string): PublicKey {
   const trimmed = String(value).trim()

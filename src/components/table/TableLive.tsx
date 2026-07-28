@@ -8,8 +8,8 @@ import {
   WidgetTable,
   WidgetTableCell,
   WidgetTableHeadCell,
-} from '@dashfy/ui'
-import { format } from '@dashfy/utils'
+} from '@getdashfy/ui'
+import { format } from '@getdashfy/utils'
 import { ArrowDownIcon, ArrowUpIcon, RadioIcon } from 'lucide-react'
 import * as React from 'react'
 
@@ -55,7 +55,7 @@ export interface TableLiveProps {
   locale?: string
   /**
    * List of Pyth feeds to display. Each feed shows Symbol, Price, and Trend.
-   * @default BTC, ETH, SOL
+   * @default BTC, ETH, SOL, gold, silver, and the seven largest US tech equities
    */
   feeds?: TableLiveFeed[]
   /**
@@ -75,15 +75,6 @@ interface FeedState {
  * Displays a table of live prices for a list of Pyth feeds.
  *
  * @example
- * ```json
- * {
- *   "extension": "market-live",
- *   "widget": "TableLive",
- *   "feeds": ["crypto.BTC_USD", "crypto.ETH_USD", "crypto.SOL_USD"]
- * }
- * ```
- *
- * @example
  * ```yaml
  * extension: market-live
  * widget: TableLive
@@ -94,11 +85,6 @@ interface FeedState {
  *     label: Ethereum
  *   - id: crypto.SOL_USD
  *     label: Solana
- * ```
- *
- * @example
- * ```tsx
- * <TableLive feeds={[{ id: 'crypto.BTC_USD', label: 'Bitcoin' }, { id: 'crypto.ETH_USD', label: 'Ethereum' }, { id: 'crypto.SOL_USD', label: 'Solana' }]} />
  * ```
  */
 export const TableLive = ({

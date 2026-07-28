@@ -1,4 +1,4 @@
-import type { ChartConfig } from '@dashfy/ui'
+import type { ChartConfig } from '@getdashfy/ui'
 import {
   ChartContainer,
   cn,
@@ -9,8 +9,8 @@ import {
   WidgetErrorBoundary,
   WidgetHeader,
   WidgetLoader,
-} from '@dashfy/ui'
-import { format } from '@dashfy/utils'
+} from '@getdashfy/ui'
+import { format } from '@getdashfy/utils'
 import type { LivelinePoint } from 'liveline'
 import { Liveline } from 'liveline'
 import { ArrowDownIcon, ArrowUpIcon, RadioIcon } from 'lucide-react'
@@ -77,24 +77,10 @@ export interface PriceLiveProps {
  * Displays the live price of a Pyth feed.
  *
  * @example
- * ```json
- * {
- *   "extension": "market-live",
- *   "widget": "PriceLive",
- *   "feedId": "crypto.BTC_USD"
- * }
- * ```
- *
- * @example
  * ```yaml
  * extension: market-live
  * widget: PriceLive
  * feedId: crypto.BTC_USD
- * ```
- *
- * @example
- * ```tsx
- * <PriceLive feedId="crypto.BTC_USD" />
  * ```
  */
 export const PriceLive = ({

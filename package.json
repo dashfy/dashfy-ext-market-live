@@ -1,7 +1,7 @@
 {
-  "name": "@dashfy/ext-market-live",
+  "name": "@getdashfy/ext-market-live",
   "version": "0.1.0",
-  "description": "Dashfy extension for displaying live market data using Pyth Network oracle.",
+  "description": "Market Live extension for Dashfy - Real-time prices from the Pyth Network oracle",
   "keywords": [
     "dashfy",
     "dashboard",
@@ -9,25 +9,27 @@
     "extension",
     "market",
     "live",
+    "pyth",
+    "solana",
+    "oracle",
     "commodities",
     "crypto",
     "equities",
     "forex",
     "rates"
   ],
-  "homepage": "https://github.com/dashfy/dashfy#readme",
+  "homepage": "https://github.com/dashfy/dashfy-ext-market-live#readme",
   "bugs": {
-    "url": "https://github.com/dashfy/dashfy/issues"
+    "url": "https://github.com/dashfy/dashfy-ext-market-live/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dashfy/dashfy.git",
-    "directory": "packages/ext-market-live"
+    "url": "git@github.com:dashfy/dashfy-ext-market-live.git"
   },
   "license": "AGPL-3.0-or-later",
   "author": {
     "name": "Breno Polanski",
-    "email": "breno.polanski@gmail.com",
+    "email": "breno@dashfy.dev",
     "url": "https://github.com/brenopolanski"
   },
   "type": "module",
@@ -37,6 +39,7 @@
     "categories": [
       "finance"
     ],
+    "docs": "Browse feed IDs at https://pyth.network/developers/price-feed-ids",
     "widgets": [
       "PriceLive",
       "TableLive"
@@ -45,7 +48,7 @@
       {
         "widget": "PriceLive",
         "feedId": "crypto.BTC_USD",
-        "showChart": false
+        "showChart": true
       }
     ]
   },
@@ -62,7 +65,7 @@
   "files": [
     "dist",
     "README.md",
-    "LICENSE.md",
+    "LICENSE",
     "CHANGELOG.md"
   ],
   "publishConfig": {
@@ -71,45 +74,75 @@
   "engines": {
     "node": ">=20.0.0"
   },
+  "packageManager": "pnpm@10.33.2",
   "scripts": {
     "build": "tsup",
-    "check:circular": "madge --circular --extensions ts,tsx src/",
-    "clean": "rm -rf .turbo dist node_modules",
+    "changeset": "changeset",
+    "changeset:publish": "changeset publish",
+    "changeset:version": "changeset version",
+    "check:all": "pnpm check:fix && pnpm check:circular",
+    "check:circular": "madge --circular --extensions ts,tsx src/ --ts-config tsconfig.json",
+    "check:fix": "pnpm format && pnpm lint:fix && pnpm typecheck",
+    "clean": "rm -rf dist node_modules",
     "dev": "tsup --watch",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "format": "pnpm prettier --write",
+    "format:check": "pnpm prettier --check",
     "generate:feeds": "tsx src/scripts/generate-pyth-feeds.ts",
-    "lint": "eslint src",
+    "lint": "eslint .",
+    "lint-staged": "lint-staged",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky",
+    "prettier": "prettier \"**/*.{js,mjs,ts,tsx,css,json,md}\"",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "verify": "pnpm check:all && pnpm test && pnpm build"
   },
   "dependencies": {
-    "@dashfy/utils": "workspace:*",
-    "@dashfy/ui": "workspace:*",
+    "@getdashfy/utils": "^0.1.1",
     "@pythnetwork/client": "^2.22.0",
     "@solana/web3.js": "^1.98.4",
     "liveline": "^0.0.7"
   },
   "peerDependencies": {
+    "@getdashfy/ui": "^0.2.1",
     "lucide-react": "^0.454.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@dashfy/tsconfig": "workspace:*",
+    "@changesets/changelog-github": "^0.5.2",
+    "@changesets/cli": "^2.29.8",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.1",
+    "@eslint/js": "^9.17.0",
+    "@getdashfy/ui": "^0.2.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.0.1",
     "@types/node": "^22.8.6",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^4.3.3",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.3.0",
+    "globals": "^15.13.0",
+    "husky": "^9.1.7",
     "jsdom": "^25.0.1",
+    "lint-staged": "^15.2.11",
     "lucide-react": "^0.454.0",
+    "madge": "^8.0.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.0",
+    "typescript-eslint": "^8.18.1",
     "vitest": "^2.1.4"
   }
 }

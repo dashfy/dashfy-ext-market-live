@@ -62,8 +62,9 @@ function normalizeKey(symbol: string, _category: Category): string {
     .replace(/\*+/g, 'X') // e.g. USD* -> USDX for valid identifier
 }
 
+/** Quote style matches prettier.config.mjs (`singleQuote`) so generated files pass `format:check`. */
 function formatKey(key: string): string {
-  return /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `"${key}"`
+  return /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `'${key}'`
 }
 
 async function main() {
@@ -107,7 +108,7 @@ async function main() {
   for (const { pubkey, account } of accountList) {
     const base = parseBaseData(account.data)
 
-    if (!base || base.type !== AccountType.Price) {
+    if (base?.type !== AccountType.Price) {
       continue
     }
 
@@ -163,7 +164,7 @@ async function main() {
     items.sort((a, b) => a.key.localeCompare(b.key))
     const exportName = CATEGORY_EXPORT_NAMES[category]
     const lines = items
-      .map((f) => `  ${formatKey(f.key)}: new PublicKey("${f.priceKey}"),`)
+      .map((f) => `  ${formatKey(f.key)}: new PublicKey('${f.priceKey}'),`)
       .join('\n')
 
     const content = `${header}
@@ -198,4 +199,4 @@ ${indexExports}
   console.log(`\nGenerated ${total} feeds -> ${outputDir}`)
 }
 
-main().catch(console.error)
+void main().catch(console.error)

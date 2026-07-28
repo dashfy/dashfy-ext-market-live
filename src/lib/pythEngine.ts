@@ -9,7 +9,7 @@
  * @example
  * ```tsx
  * // In a widget component (reuses shared connection):
- * import { subscribeToPrice, unsubscribeFromPrice, PYTH_CRYPTO_FEEDS, PYTH_EQUITIES_FEEDS } from '@dashfy/ext-market-live'
+ * import { subscribeToPrice, unsubscribeFromPrice, PYTH_CRYPTO_FEEDS, PYTH_EQUITIES_FEEDS } from '@getdashfy/ext-market-live'
  *
  * function MyPriceWidget() {
  *   const [price, setPrice] = useState(0)
@@ -178,6 +178,11 @@ function scheduleConnectionUpdate(): void {
   })
 }
 
+/**
+ * Runs the scheduled connection update.
+ *
+ * @returns A promise that resolves when the connection update is complete
+ */
 async function runScheduledConnectionUpdate(): Promise<void> {
   connectionUpdateScheduled = false
 
@@ -197,7 +202,19 @@ async function runScheduledConnectionUpdate(): Promise<void> {
   }
 }
 
-/** Returns the singleton Pyth connection. */
+/**
+ * Returns the singleton Pyth connection, or `null` before the first subscription
+ * has established one.
+ *
+ * @returns the shared `PythConnection`, or `null` when no feed is subscribed
+ * @example
+ * ```ts
+ * const connection = getPythConnection()
+ * if (connection) {
+ *   await connection.stop()
+ * }
+ * ```
+ */
 export function getPythConnection(): PythConnection | null {
   return pythConnection
 }
