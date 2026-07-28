@@ -122,7 +122,7 @@ An unknown category or key throws, so a typo surfaces as a widget error rather t
 
 Display the live price of a single feed, with an optional rolling chart and trend arrow.
 
-<img src="https://raw.githubusercontent.com/dashfy/dashfy-ext-market-live/refs/heads/main/preview/market-live.PriceLive.png" alt="PriceLive widget preview" width="640" />
+<img src="https://raw.githubusercontent.com/dashfy/dashfy-ext-market-live/refs/heads/main/preview/market-live.PriceLive.gif" alt="PriceLive widget preview" width="640" />
 
 **Parameters:**
 
@@ -164,7 +164,7 @@ When `subject` is omitted, the label is derived from `feedId` (`crypto.BTC_USD` 
 
 Display a table of live prices for many feeds at once, each row showing symbol, price, and trend.
 
-<img src="https://raw.githubusercontent.com/dashfy/dashfy-ext-market-live/refs/heads/main/preview/market-live.TableLive.png" alt="TableLive widget preview" width="640" />
+<img src="https://raw.githubusercontent.com/dashfy/dashfy-ext-market-live/refs/heads/main/preview/market-live.TableLive.gif" alt="TableLive widget preview" width="640" />
 
 **Parameters:**
 
