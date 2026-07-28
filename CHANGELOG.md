@@ -1,5 +1,11 @@
 # @getdashfy/ext-market-live
 
+## 0.1.1
+
+### Patch Changes
+
+- Update README documentation
+
 ## 0.1.0
 
 ### Initial Release
