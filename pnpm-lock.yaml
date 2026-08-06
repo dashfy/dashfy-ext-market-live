@@ -36,8 +36,8 @@ importers:
         specifier: ^9.17.0
         version: 9.39.5
       '@getdashfy/ui':
-        specifier: ^0.2.1
-        version: 0.2.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(ajv@8.20.0)(bufferutil@4.1.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(superstruct@2.0.2)(utf-8-validate@6.0.6)
+        specifier: ^0.3.1
+        version: 0.3.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(ajv@8.20.0)(bufferutil@4.1.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(superstruct@2.0.2)(utf-8-validate@6.0.6)
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.10.0(@testing-library/dom@10.4.1)
@@ -1376,24 +1376,24 @@ packages:
         integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==,
       }
 
-  '@getdashfy/themes@0.1.1':
+  '@getdashfy/themes@0.1.3':
     resolution:
       {
-        integrity: sha512-NeKIO+FQAZ46u9XFJGkN/Apd+cXaA+Jkdocbf1iZkCJknZ1zZDBj6ENg85gWs1RnVc196WMmWYUxoM3tTsJBAw==,
+        integrity: sha512-55DLiK9vjbGJGdCOxPksFQPI7fQrm5/Q9AhKOnyK/iDwdzEIk0Ft2+BFP+Mm7FyuwGI7VGDRG+HMR6r+Eubv8A==,
       }
     engines: { node: '>=20.0.0' }
 
-  '@getdashfy/types@0.1.1':
+  '@getdashfy/types@0.3.0':
     resolution:
       {
-        integrity: sha512-y7iJwFkO6605N7NamHM5UQQVG0uVYf5AFeae4kirfkLYBw4ZKHtZjGj4urGPkvF1stcRgoB9IGGglwpiWQXO+w==,
+        integrity: sha512-zTiVe6LU4RR29SnN3hvLqIMLk43exSESh86gtCqhvaIlQusVI1MKx8UImLG6nkr8CpmF4RQn2khWTd826Rm+wg==,
       }
     engines: { node: '>=20.0.0' }
 
-  '@getdashfy/ui@0.2.1':
+  '@getdashfy/ui@0.3.1':
     resolution:
       {
-        integrity: sha512-q9KBv74+hcoL5ega+jr0SPA2FQvl1xDm0wtV+/7/O5KioooWOZjA2IdU/a07hOzU7lL6+oYBXEIdMf8pMRZYvg==,
+        integrity: sha512-SV84yUhZ/dal0SqEbxpmVueLYm75YIFqLkH4w4f7XRcVJgrAjwRZXy8zeSmMCiHMbg29h4PjQcCwI1EezFJISA==,
       }
     engines: { node: '>=20.0.0' }
     peerDependencies:
@@ -8724,15 +8724,15 @@ snapshots:
 
   '@floating-ui/utils@0.2.12': {}
 
-  '@getdashfy/themes@0.1.1':
+  '@getdashfy/themes@0.1.3':
     dependencies:
-      '@getdashfy/types': 0.1.1
+      '@getdashfy/types': 0.3.0
 
-  '@getdashfy/types@0.1.1': {}
+  '@getdashfy/types@0.3.0': {}
 
-  '@getdashfy/ui@0.2.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(ajv@8.20.0)(bufferutil@4.1.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(superstruct@2.0.2)(utf-8-validate@6.0.6)':
+  '@getdashfy/ui@0.3.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(ajv@8.20.0)(bufferutil@4.1.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(superstruct@2.0.2)(utf-8-validate@6.0.6)':
     dependencies:
-      '@getdashfy/themes': 0.1.1
+      '@getdashfy/themes': 0.1.3
       '@getdashfy/utils': 0.1.1
       '@hookform/resolvers': 5.5.7(ajv@8.20.0)(react-hook-form@7.83.0(react@19.2.8))(superstruct@2.0.2)(zod@3.25.76)
       '@radix-ui/react-accordion': 1.2.20(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
