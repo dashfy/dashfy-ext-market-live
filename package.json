@@ -1,6 +1,6 @@
 {
   "name": "@getdashfy/ext-market-live",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Market Live extension for Dashfy - Real-time prices from the Pyth Network oracle",
   "keywords": [
     "dashfy",
@@ -93,6 +93,7 @@
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,css,json,md}\"",
+    "sync:dashfy": "node scripts/sync-dashfy-deps.js",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",

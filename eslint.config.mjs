@@ -180,6 +180,16 @@ const eslintConfig = defineConfig(
     },
   },
 
+  // Node.js config for script files
+  {
+    files: ['**/scripts/**/*.js'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
+
   // Test files config
   {
     files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
