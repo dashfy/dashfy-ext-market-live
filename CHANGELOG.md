@@ -1,5 +1,11 @@
 # @getdashfy/ext-market-live
 
+## 0.2.2
+
+### Patch Changes
+
+- Widen the `lucide-react` peer range to `>=0.454.0`. Because lucide is a `0.x` package, the previous `^0.454.0` only allowed patch bumps, so it could not be satisfied alongside `@getdashfy/ui`, which depends on `lucide-react@^0.555.0`. npm rejected the install with an `ERESOLVE` peer conflict.
+
 ## 0.2.1
 
 ### Patch Changes

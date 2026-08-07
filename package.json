@@ -1,6 +1,6 @@
 {
   "name": "@getdashfy/ext-market-live",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Market Live extension for Dashfy - Real-time prices from the Pyth Network oracle",
   "keywords": [
     "dashfy",
@@ -107,7 +107,7 @@
   },
   "peerDependencies": {
     "@getdashfy/ui": "^0.3.1",
-    "lucide-react": "^0.454.0",
+    "lucide-react": ">=0.454.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -134,7 +134,7 @@
     "husky": "^9.1.7",
     "jsdom": "^25.0.1",
     "lint-staged": "^15.2.11",
-    "lucide-react": "^0.454.0",
+    "lucide-react": "^0.555.0",
     "madge": "^8.0.0",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
