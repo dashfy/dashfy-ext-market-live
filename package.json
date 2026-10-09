@@ -114,8 +114,8 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.2",
     "@changesets/cli": "^2.29.8",
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.1",
+    "@commitlint/cli": "^21.0.0",
+    "@commitlint/config-conventional": "^21.0.0",
     "@eslint/js": "^9.17.0",
     "@getdashfy/ui": "^0.3.1",
     "@testing-library/jest-dom": "^6.9.1",
