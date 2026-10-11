@@ -120,7 +120,7 @@
     "@getdashfy/ui": "^0.3.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.0.1",
-    "@types/node": "^22.8.6",
+    "@types/node": "^24.0.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^4.3.3",
